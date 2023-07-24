@@ -35,11 +35,12 @@ main {
     background-color: var(--bg-300);
     padding: 2%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, 200px);
+    margin: auto;
+    justify-content: center;
     /* Creates 3 equal-width columns */
-    gap: 35px 5px;
+    grid-gap: 2rem;
     /* Adjust the gap between sticky notes as needed */
-    grid-auto-rows: min-content;
     /* Each row will adjust to the content height */
 }
 
@@ -265,15 +266,18 @@ h1 {
 /* sticky-note component */
 
 .sticky-note {
-    max-width: 80%;
+    /* aspect-ratio: 1; */
+    max-width: fit-content;
+    min-width: 200px;
     border: none;
+    margin: 1rem;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     color: #353535;
     align-self: start;
-    justify-self: center;
     font-family: 'Indie Flower', cursive;
+    overflow: clip;
 }
 
 .sticky-note h1 {
